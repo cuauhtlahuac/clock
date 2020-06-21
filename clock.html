@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div style="display: flex;
+     justify-content: center;
+     align-items: center;
+     height: 100vh; 
+     background-image: linear-gradient( white,rgba(183, 237, 250, 0.993)) ;
+     color: #111;
+       ">
+        <p style="font-size: 20rem;">Clock here</p>
+    </div>
+</body>
+<script>
+    const showClock = document.querySelector("p")
+    let seconds, minutes, hours;
+    function clock() {
+        let date = new Date()
+        seconds = date.getSeconds().toString(10)
+        minutes = date.getMinutes().toString(10)
+        hours = date.getHours()
+        return showClock.innerText = `${hours}:${minutes.length >= 2 ? minutes : 0+minutes}:${seconds.length >= 2 ? seconds : 0+seconds}`
+    }
+    setInterval(() => {
+        return clock()
+    }, 1000)
+</script>
+
+</html>
